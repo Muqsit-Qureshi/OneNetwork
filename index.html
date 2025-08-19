@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OneNetwork | Premium IT Solutions</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             /* Dark theme variables */
@@ -17,7 +20,7 @@
             --gradient-accent: linear-gradient(135deg, var(--primary), var(--accent));
             --border-radius: 24px;
             --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            
+
             /* Default dark theme */
             --background: #0f172a;
             --background-secondary: #1e293b;
@@ -496,7 +499,7 @@
             transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background: var(--gradient);
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
             border-radius: 2px;
         }
 
@@ -529,14 +532,13 @@
         }
 
         .feature-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-12px) scale(1.02);
             box-shadow: var(--shadow-hover);
         }
 
         .feature-icon {
             width: 70px;
             height: 70px;
-            background: rgba(15, 23, 42, 0.5);
             border-radius: 18px;
             display: flex;
             align-items: center;
@@ -564,6 +566,93 @@
             margin-bottom: 15px;
             opacity: 0.8;
             font-size: 0.95rem;
+        }
+
+        .learn-more {
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover .learn-more {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background: rgba(0, 0, 0, 0.6);
+            animation: fadeIn 0.3s;
+        }
+
+        .modal-content {
+            background: #fff;
+            margin: 10% auto;
+            padding: 30px;
+            border-radius: 16px;
+            max-width: 600px;
+            position: relative;
+            animation: slideUp 0.4s ease;
+        }
+
+        .modal h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        .modal p {
+            line-height: 1.6;
+            margin-top: 10px;
+            color: #374151;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 22px;
+            cursor: pointer;
+            color: #6b7280;
+        }
+
+        .close-btn:hover {
+            color: var(--primary);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         /* Services Section */
@@ -1404,7 +1493,7 @@
             .steps::before {
                 display: none;
             }
-            
+
             .step {
                 width: 48%;
             }
@@ -1414,48 +1503,48 @@
             .hero h1 {
                 font-size: 2.5rem;
             }
-            
+
             .hero-content {
                 text-align: center;
                 margin: 0 auto;
             }
-            
+
             .hero-buttons {
                 justify-content: center;
             }
-            
+
             .hero-image {
                 display: none;
             }
-            
+
             .services-container {
                 flex-direction: column;
             }
-            
+
             .services-image {
                 height: 350px;
                 order: -1;
                 margin-bottom: 30px;
             }
-            
+
             .steps {
                 flex-direction: column;
             }
-            
+
             .step {
                 width: 100%;
                 margin-bottom: 20px;
             }
-            
+
             .feature-card,
             .testimonial {
                 padding: 25px 20px;
             }
-            
+
             .section-title h2 {
                 font-size: 2.2rem;
             }
-            
+
             nav ul {
                 display: none;
                 position: absolute;
@@ -1466,21 +1555,21 @@
                 flex-direction: column;
                 padding: 20px;
                 gap: 15px;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
                 backdrop-filter: blur(10px);
                 border-top: 1px solid var(--border);
                 z-index: 999;
             }
-            
+
             nav ul.active {
                 display: flex;
             }
-            
+
             .menu-toggle {
                 display: flex;
                 margin-left: 15px;
             }
-            
+
             .header-right {
                 margin-left: auto;
             }
@@ -1490,75 +1579,75 @@
             .hero {
                 padding-top: 90px;
             }
-            
+
             .hero h1 {
                 font-size: 2.2rem;
             }
-            
+
             .hero p {
                 font-size: 1.1rem;
             }
-            
+
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
                 gap: 12px;
             }
-            
+
             .section-title h2 {
                 font-size: 2rem;
             }
-            
+
             .section-title h2::after {
                 width: 70px;
             }
-            
+
             .stat-card {
                 padding: 25px 15px;
             }
-            
+
             .stat-number {
                 font-size: 2.2rem;
             }
-            
+
             .contact-container {
                 grid-template-columns: 1fr;
             }
-            
+
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
-            
+
             .footer-column {
                 text-align: center;
             }
-            
+
             .footer-column h3::after {
                 left: 50%;
                 transform: translateX(-50%);
             }
-            
+
             .footer-links a {
                 justify-content: center;
             }
-            
+
             .social-icons {
                 justify-content: center;
             }
-            
+
             .header-container {
                 flex-wrap: wrap;
             }
-            
+
             .logo {
                 height: 60px;
             }
-            
+
             .theme-toggle {
                 margin: 0 10px;
             }
-            
+
             .cta-button {
                 padding: 10px 25px;
                 font-size: 0.95rem;
@@ -1569,47 +1658,48 @@
             .hero h1 {
                 font-size: 1.8rem;
             }
-            
+
             .hero p {
                 font-size: 1rem;
             }
-            
+
             .section-title h2 {
                 font-size: 1.7rem;
             }
-            
+
             .section-title p {
                 font-size: 0.95rem;
             }
-            
+
             .stat-card {
                 padding: 20px 15px;
             }
-            
+
             .stat-number {
                 font-size: 2rem;
             }
-            
+
             .feature-card h3 {
                 font-size: 1.3rem;
             }
-            
+
             .portfolio-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .contact-info, .contact-form {
+
+            .contact-info,
+            .contact-form {
                 padding: 25px;
             }
-            
+
             .map-container {
                 height: 250px;
             }
-            
+
             .testimonial-content {
                 font-size: 1rem;
             }
-            
+
             .testimonial {
                 padding: 30px 20px;
             }
@@ -1644,7 +1734,7 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-            
+
             <div class="header-right">
                 <div class="theme-toggle">
                     <div class="theme-toggle-btn" id="themeToggle">
@@ -1653,12 +1743,12 @@
                         <div class="theme-toggle-thumb"></div>
                     </div>
                 </div>
-                
+
                 <button id="openCareerForm" class="cta-button">Join Our Team</button>
             </div>
         </div>
     </header>
-    
+
     <!-- Career Application Form Modal -->
     <div id="careerFormModal" class="modal-overlay">
         <div class="modal-content animate-slide">
@@ -1685,13 +1775,14 @@
             </form>
         </div>
     </div>
-    
+
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
                 <h1>Innovate. Evolve. <br>Lead</h1>
-                <p>We deliver cutting-edge IT solutions that drive growth, <br>enhance security,<br> and create exceptional
+                <p>We deliver cutting-edge IT solutions that drive growth, <br>enhance security,<br> and create
+                    exceptional
                     digital experiences <br>for your customers.</p>
                 <div class="hero-buttons">
                     <a href="#services" class="cta-button">Explore Services</a>
@@ -1749,52 +1840,69 @@
                 <p>Comprehensive solutions tailored to your business needs</p>
             </div>
             <div class="features-grid">
+
+                <!-- Web Development -->
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
+                    <div class="feature-icon"><i class="fas fa-code"></i></div>
                     <h3>Web Development</h3>
-                    <p>High-performance, scalable websites built with modern technologies like React, Vue, and Node.js.
-                    </p>
+                    <p>High-performance, scalable websites built with React, Vue, and Node.js.</p>
+                    <a href="#" class="learn-more" data-service="web">Learn More →</a>
                 </div>
+
+                <!-- SEO -->
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
+                    <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
                     <h3>SEO Services</h3>
-                    <p>Increase visibility and drive organic traffic with our data-driven SEO strategies.</p>
+                    <p>Increase visibility and drive organic traffic with our SEO strategies.</p>
+                    <a href="#" class="learn-more" data-service="seo">Learn More →</a>
                 </div>
+
+                <!-- App Development -->
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
+                    <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
                     <h3>App Development</h3>
-                    <p>Native and cross-platform mobile applications for iOS and Android platforms.</p>
+                    <p>Native and cross-platform apps for iOS and Android.</p>
+                    <a href="#" class="learn-more" data-service="app">Learn More →</a>
                 </div>
+
+                <!-- Cyber Security -->
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
+                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
                     <h3>Cyber Security</h3>
-                    <p>Comprehensive security solutions to protect your data and infrastructure.</p>
+                    <p>Comprehensive solutions to protect your data and infrastructure.</p>
+                    <a href="#" class="learn-more" data-service="cyber">Learn More →</a>
                 </div>
+
+                <!-- Cloud / UI UX -->
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-cloud"></i>
-                    </div>
-                    <h3>UI UX Design</h3>
-                    <p>Scalable cloud infrastructure and migration services for business continuity.</p>
+                    <div class="feature-icon"><i class="fas fa-cloud"></i></div>
+                    <h3>UI / UX Design</h3>
+                    <p>Designing intuitive, user-friendly interfaces for maximum engagement.</p>
+                    <a href="#" class="learn-more" data-service="uiux">Learn More →</a>
                 </div>
+
+                <!-- Graphic Design -->
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-database"></i>
-                    </div>
+                    <div class="feature-icon"><i class="fas fa-paint-brush"></i></div>
                     <h3>Graphic Design</h3>
-                    <p>Transform your data into actionable insights with our BI solutions.</p>
+                    <p>Creative branding, logos, and visuals that stand out.</p>
+                    <a href="#" class="learn-more" data-service="graphic">Learn More →</a>
                 </div>
+
             </div>
         </div>
     </section>
+
+    <!-- Modal -->
+    <div id="serviceModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3 id="modalTitle"></h3>
+            <p id="modalDescription"></p>
+        </div>
+    </div>
+
+
 
     <!-- Portfolio Section -->
     <section class="portfolio" id="portfolio">
@@ -2005,7 +2113,7 @@
             </div>
         </div>
     </section>
-  
+
     <!-- Contact Section -->
     <section class="contact-section" id="contact">
         <div class="container">
@@ -2043,7 +2151,7 @@
                             </div>
                             <div class="contact-text">
                                 <h4>Email Address</h4>
-                                <p>Info@onetworktech.com</p>
+                                <p> info@onenetworktech.com</p>
                             </div>
                         </div>
                     </div>
@@ -2121,8 +2229,8 @@
                     <ul class="footer-links">
                         <li><a href="#"><i class="fas fa-map-marker-alt"></i> Texas, USA</a></li>
                         <li><a href="tel:+18884040386"><i class="fas fa-phone"></i> +1 888-404-0386</a></li>
-                        <li><a href="mailto:Info@onetworktech.com"><i class="fas fa-envelope"></i>
-                                Info@onetworktech.com</a></li>
+                        <li><a href="mailto: info@onenetworktech.com"><i class="fas fa-envelope"></i>
+                                 info@onenetworktech.com</a></li>
                     </ul>
                 </div>
             </div>
@@ -2134,16 +2242,17 @@
         </div>
     </footer>
 
+   
     <script>
         // Mobile Menu Toggle
         const menuToggle = document.getElementById('menuToggle');
         const navMenu = document.getElementById('navMenu');
-        
+
         menuToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
             menuToggle.classList.toggle('active');
         });
-        
+
         // Close mobile menu when clicking on a link
         document.querySelectorAll('#navMenu a').forEach(link => {
             link.addEventListener('click', () => {
@@ -2151,17 +2260,17 @@
                 menuToggle.classList.remove('active');
             });
         });
-        
+
         // Theme toggle functionality
         const themeToggle = document.getElementById('themeToggle');
         const body = document.body;
-        
+
         // Check for saved theme preference
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme) {
             body.setAttribute('data-theme', savedTheme);
         }
-        
+
         // Toggle theme on button click
         themeToggle.addEventListener('click', () => {
             if (body.getAttribute('data-theme') === 'light') {
@@ -2282,24 +2391,73 @@
             });
         });
 
+        // Career form modal functionality
         const openBtn = document.getElementById('openCareerForm');
         const closeBtn = document.getElementById('closeCareerForm');
-        const modal = document.getElementById('careerFormModal');
+        const careerModal = document.getElementById('careerFormModal'); // Changed variable name
 
         openBtn.addEventListener('click', () => {
-            modal.style.display = 'flex';
+            careerModal.style.display = 'flex';
         });
 
         closeBtn.addEventListener('click', () => {
-            modal.style.display = 'none';
+            careerModal.style.display = 'none';
         });
 
         window.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.style.display = 'none';
+            if (e.target === careerModal) {
+                careerModal.style.display = 'none';
             }
         });
 
+        // Service modal functionality
+        const serviceModal = document.getElementById("serviceModal"); // Changed variable name
+        const modalTitle = document.getElementById("modalTitle");
+        const modalDescription = document.getElementById("modalDescription");
+        const serviceCloseBtn = serviceModal.querySelector(".close-btn"); // More specific selector
+
+        const serviceData = {
+            web: {
+                title: "Web Development",
+                desc: "Our web development services deliver scalable, responsive, and secure websites. We specialize in MERN stack, Laravel, and modern frameworks to ensure your business stays ahead online."
+            },
+            seo: {
+                title: "SEO Services",
+                desc: "We offer technical SEO audits, keyword research, content optimization, and link-building strategies to boost your rankings and drive sustainable organic growth."
+            },
+            app: {
+                title: "App Development",
+                desc: "We build native iOS and Android apps as well as cross-platform solutions using Flutter and React Native. Our focus is on performance, security, and smooth user experience."
+            },
+            cyber: {
+                title: "Cyber Security",
+                desc: "Protect your business with advanced firewalls, intrusion detection, vulnerability assessments, and 24/7 monitoring services. Stay one step ahead of cyber threats."
+            },
+            uiux: {
+                title: "UI / UX Design",
+                desc: "We design interfaces that combine beauty and usability. From wireframes to prototypes, our UX experts create experiences that maximize customer satisfaction."
+            },
+            graphic: {
+                title: "Graphic Design",
+                desc: "Our design team crafts visually stunning graphics, branding kits, and marketing materials that elevate your brand identity and captivate your audience."
+            }
+        };
+
+        document.querySelectorAll(".learn-more").forEach(btn => {
+            btn.addEventListener("click", e => {
+                e.preventDefault();
+                const service = btn.getAttribute("data-service");
+                modalTitle.textContent = serviceData[service].title;
+                modalDescription.textContent = serviceData[service].desc;
+                serviceModal.style.display = "block";
+            });
+        });
+
+        serviceCloseBtn.onclick = () => serviceModal.style.display = "none";
+        window.onclick = e => { 
+            if (e.target == serviceModal) serviceModal.style.display = "none"; 
+        };
     </script>
 </body>
+
 </html>
